@@ -1,0 +1,12 @@
+- make file should be named 'makefile' or 'Makefile'
+- to execute it, just type 'make'
+- always use tabs, not spaces in makefiles
+
+project folder structure:
+- makefile should go in /src
+- .h files in /include
+- source code in /src
+- local libraries in /lib
+- object files in /src/obj
+
+

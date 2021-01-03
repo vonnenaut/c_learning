@@ -1,0 +1,5 @@
+- be sure to use tabs and not spaces in the makefile
+- to run a makefile w/name other than 'makefile' or 'Makefile: 
+    make -f ex2.1.mak
+or, simply name it one of the two aforementioned and type the following:
+    make
