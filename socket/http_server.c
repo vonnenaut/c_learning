@@ -6,6 +6,7 @@
 #include <sys/types.h>
 
 #include <netinet/in.h>
+#include <unistd.h>
 
 int main() {
     // open a file to serve
@@ -38,6 +39,7 @@ int main() {
     while(1) {
         client_socket = accept(server_socket, NULL, NULL);
         send(client_socket, http_header, sizeof(http_header), 0);
+        close(client_socket);
     }
 
     return 0;
