@@ -12,7 +12,7 @@
         __FILE__, __LINE__, ##__VA_ARGS__)
 #endif
 
-#define clean_erro() (errno == 0 ? "None" : strerror(errno))
+#define clean_errno() (errno == 0 ? "None" : strerror(errno))
 
 #define log_err(M, ...) fprintf(stderr,\
         "[ERROR] (%s:%d: errno: %s) " M "\n", __FILE__, __LINE__,\
@@ -28,13 +28,12 @@
 #define check(A, M, ...) if(!(A)) {\
     log_err(M, ##__VA_ARGS__); errno=0; goto error; }
 
-#define sentinel(M, ...) { log_err(M, ##__VA_ARGS__);\
+#define sentinel(M, ...)  { log_err(M, ##__VA_ARGS__);\
     errno=0; goto error; }
 
 #define check_mem(A) check((A), "Out of memory.")
 
 #define check_debug(A, M, ...) if(!(A)) { debug(M, ##__VA_ARGS__);\
     errno=0; goto error; }
-
 
 #endif
